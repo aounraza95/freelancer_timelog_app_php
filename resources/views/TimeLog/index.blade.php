@@ -34,10 +34,16 @@
 								{{ $timelog['id'] }}
 							</td>
 							<td class="whitespace-nowrap px-6 py-4 text-left text-sm text-gray-500">
-								<!-- {{ $timelog['task_name'] }} -->
+								{{ $timelog['tasks']->task_name }}
 							</td>
 							<td class="whitespace-nowrap px-6 py-4 text-sm text-gray-500 md:block">
-								<span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-green-100 text-green-800 capitalize">--</span>
+								<span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-green-100 text-green-800 capitalize">{{ (!$timelog['end_datetime'] ? 'Active' : 'Closed')  }}</span>
+							</td>
+							<td class="whitespace-nowrap px-6 py-4 text-left text-sm text-gray-500">
+								<time datetime="2020-07-11">{{ $timelog['start_datetime'] }}</time>
+							</td>
+							<td class="whitespace-nowrap px-6 py-4 text-left text-sm text-gray-500">
+								<time datetime="2020-07-11">{{ $timelog['end_datetime'] }}</time>
 							</td>
 							<td class="whitespace-nowrap px-6 py-4 text-right text-sm text-gray-500">
 								<time datetime="2020-07-11">{{ $timelog['updated_at'] }}</time>

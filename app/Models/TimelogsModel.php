@@ -10,4 +10,8 @@ class TimelogsModel extends Model
     use HasFactory;
 
     protected $table = 'tasks_timelog';
+
+    public function tasks() {
+        return $this->hasOne(TaskssModel::class, 'id', 'task_id');
+    }
 }

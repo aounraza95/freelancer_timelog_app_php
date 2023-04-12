@@ -16,5 +16,9 @@ class ProjectsModel extends Model
         'status',
         'user_id',
     ];
+
+    public function tasks() {
+        return $this->hasMany(TaskssModel::class, 'project_id');
+    }
     
 }

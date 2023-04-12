@@ -55,44 +55,50 @@
 
 		<div class="overflow-hidden bg-white shadow sm:rounded-lg">
 			<div class="px-4 py-5 sm:px-6">
-				<h3 class="text-xl font-semibold leading-6 text-gray-900">Create Task</h3>
-				<p class="mt-1 max-w-2xl text-sm text-gray-500">Create new task here..</p>
+				<h3 class="text-xl font-semibold leading-6 text-gray-900">Create Timelog</h3>
+				<p class="mt-1 max-w-2xl text-sm text-gray-500">Create new task timelog here..</p>
 			</div>
-			<form action="/tasks/create/submit" method="POST">
+			<form action="/timelog/create/submit" method="POST">
 				@csrf()
 				<div class="border-t border-gray-200">
 					<div class="p-5">
 						<div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 							<div class="sm:col-span-3">
-								<label for="task_name" class="block text-sm font-medium leading-6 text-gray-900">Task name</label>
+								<label for="start_time" class="block text-sm font-medium leading-6 text-gray-900">Start Time</label>
 								<div class="mt-2">
-									<input type="text" name="task_name" id="task_name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 p-2">
+									<input type="datetime-local" name="start_time" id="start_time" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 p-2">
 								</div>
 							</div>
-							<div class="sm:col-span-6">
-								<label for="project" class="block text-sm font-medium leading-6 text-gray-900">Project</label>
+							<div class="sm:col-span-3">
+								<label for="end_time" class="block text-sm font-medium leading-6 text-gray-900">End Time</label>
 								<div class="mt-2">
-									<select id="project" name="project" autocomplete="project" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-										@foreach($projectslist as $project)
-										<option value="{{ $project['id'] }}">{{ $project['project_name'] }}</option>
+									<input type="datetime-local" name="end_time" id="end_time" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 p-2">
+								</div>
+							</div>
+							<div class="sm:col-span-3">
+								<label for="task_id" class="block text-sm font-medium leading-6 text-gray-900">Task</label>
+								<div class="mt-2">
+									<select id="task_id" name="task_id" autocomplete="off" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+										@foreach($taskslist as $task)
+											<option value="{{ $task['id'] }}">{{ $task['task_name'] }}</option>
 										@endforeach
 									</select>
 								</div>
 							</div>
-							<div class="sm:col-span-6">
+							<!-- <div class="sm:col-span-3">
 								<label for="status" class="block text-sm font-medium leading-6 text-gray-900">Status</label>
 								<div class="mt-2">
 									<select id="status" name="status" autocomplete="status" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
 										<option value="active">Active</option>
 									</select>
 								</div>
-							</div>
+							</div> -->
 						</div>
 					</div>
 					<!--  -->
 					<div class="p-6 flex items-center justify-end gap-x-6">
-						<a href="/tasks" class="text-sm font-semibold leading-6 text-gray-900">Cancel</a>
-						<button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save Task</button>
+						<a href="/timelog" class="text-sm font-semibold leading-6 text-gray-900">Cancel</a>
+						<button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save Timelog</button>
 					</div>
 				</div>
 			</form>

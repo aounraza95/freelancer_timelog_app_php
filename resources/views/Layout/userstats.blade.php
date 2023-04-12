@@ -11,7 +11,7 @@
 						<dl>
 							<dt class="truncate text-sm font-medium text-gray-500">Total Projects</dt>
 							<dd>
-								<div class="text-lg font-medium text-gray-900">3,065</div>
+								<div class="text-lg font-medium text-gray-900">{{ $largerStats['projects'] }}</div>
 							</dd>
 						</dl>
 					</div>
@@ -26,7 +26,7 @@
 						<dl>
 							<dt class="truncate text-sm font-medium text-gray-500">Total Tasks</dt>
 							<dd>
-								<div class="text-lg font-medium text-gray-900">30</div>
+								<div class="text-lg font-medium text-gray-900">{{ $largerStats['tasks'] }}</div>
 							</dd>
 						</dl>
 					</div>

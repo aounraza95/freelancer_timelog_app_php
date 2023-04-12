@@ -40,5 +40,5 @@ Route::POST('/tasks/create/submit', [TasksController::class, 'submitCreateTask']
 
 // TimeLog
 Route::get('/timelog', [TimelogsController::class, 'index']);
-Route::get('/timelog/create', [TimelogsController::class, 'createTask']);
-Route::POST('/timelog/create/submit', [TimelogsController::class, 'submitCreateTask']);
+Route::get('/timelog/create', [TimelogsController::class, 'createTimelog']);
+Route::POST('/timelog/create/submit', [TimelogsController::class, 'submitCreateTimelog']);
